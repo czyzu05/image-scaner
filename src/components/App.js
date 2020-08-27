@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import ImageSearch from './ImageSearch'
+import ImageList from './ImageList'
 
 import '../styles/App.css'
 
@@ -31,6 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         <ImageSearch handleGetRequest={this.handleGetRequest} />
+        {this.state.images.length > 0 && <ImageList images={this.state.images} />}
       </div>
     )
   }
