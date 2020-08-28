@@ -1,4 +1,50 @@
-.test {
-    font-size: 25px;
+.viewImageWrapper {
+    width: 80vw;
+    margin: 40px auto 0 auto ;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 60%;
+    flex-basis: 45%;
+    justify-content: center;
+}
+
+.info {
+    font-size: 18px;
+    color: #fff;
+}
+
+.author, .download {
+    font-size: 26px;
     color: white;
+}
+.authorName {
+    color: darkorange;
+}
+
+h4{
+    margin: 15px;
+}
+
+.downloadLink {
+    text-decoration: none;
+    color: darkorange;
+}
+
+.homeButton {
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.homeLink {
+    text-decoration: none;
+    color: darkorange;
 }
