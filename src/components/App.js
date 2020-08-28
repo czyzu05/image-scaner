@@ -10,6 +10,7 @@ const API_KEY = '18055707-bbe538f9e57670f8eb3287a7c'
 class App extends Component {
   state = {
     images: [],
+    error: null,
   }
 
   handleGetRequest = async (e) => {
@@ -21,18 +22,25 @@ class App extends Component {
     const request = await fetch(URL)
     const response = await request.json()
 
-    this.setState({
-      images: response.hits
-    })
+    if (!searchTerm) {
+      this.setState({
+        error: "Place provide a value"
+      })
+    } else {
+      this.setState({
+        error: null,
+        images: response.hits
+      })
+    }
 
-    console.log(this.state.images)
+
   }
 
   render() {
     return (
       <div className="App">
         <ImageSearch handleGetRequest={this.handleGetRequest} />
-        {this.state.images.length > 0 && <ImageList images={this.state.images} />}
+        {this.state.error !== null ? <h3 style={{ color: 'white', textAlign: 'center', fontSize: '25px' }}>{this.state.error}</h3> : <ImageList images={this.state.images} />}
       </div>
     )
   }
